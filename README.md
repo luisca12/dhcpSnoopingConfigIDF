@@ -1,2 +1,2 @@
 # dhcpSoopingConfig
-This script is to check for interfaces on the Core Switch connected to SDWs running DHCP Snooping Trust
+This script is to configure DHCP Snooping on IDF switches

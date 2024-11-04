@@ -2,9 +2,9 @@ import os
 
 def greetingString():
         os.system("CLS")
-        print('  -------------------------------------------------------------- ')
-        print(f"  Welcome to the automated DHCP Snooping configuration program ")
-        print('  -------------------------------------------------------------- ')
+        print('  ------------------------------------------------------------------ ')
+        print(f"  Welcome to the automated IDF DHCP Snooping configuration program ")
+        print('  ------------------------------------------------------------------ ')
 
 def menuString(deviceIP, username):
         os.system("CLS")

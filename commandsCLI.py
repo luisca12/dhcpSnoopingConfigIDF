@@ -10,7 +10,7 @@ interface = ''
 snoopTrust = "ip dhcp snooping trust"
 
 shHostname = "show run | i hostname"
-shIntStatus = "show interface status | exc SDW|sdw|LUM|lum|Lum|Ap|Core|CORE|core|Po|Core|CORE|core"
+shIntStatus = "show interface status | exc SDW|sdw|LUM|lum|Lum|Ap|core|Po|Core|CORE|core|trunk"
 shIntTrunk = "show interface trunk | exclude Vlans|1500|Ap"
 shIntCore = "show interface description | inc Core|CORE|core"
 
@@ -122,7 +122,7 @@ def dhcpSnooopTr(validIPs, username, netDevice):
                     shIntTrunkOut1 = re.findall(intPattPo, shIntTrunkOut)
                     authLog.info(f"The following interfaces were found under the command: {shIntTrunk}: {shIntTrunkOut1}")
 
-                    if shIntTrunkOut1 == []:
+                    if not shIntTrunkOut1 == []:
                         
                         for interface in shIntTrunkOut1:
                             interface = interface.strip()
@@ -155,7 +155,7 @@ def dhcpSnooopTr(validIPs, username, netDevice):
                     shIntCoreOut1 = re.findall(intPatt, shIntCoreOut)
                     authLog.info(f"The following interfaces were found under the command: {shIntCore}: {shIntCoreOut1}")
 
-                    if shIntCoreOut1 == []:
+                    if not shIntCoreOut1 == []:
 
                         for interface in shIntCoreOut1:
                             interface = interface.strip()

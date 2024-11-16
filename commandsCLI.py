@@ -49,9 +49,9 @@ delCatchAll = [
 ]
 
 # Regex Patterns
-intPatt = r'[a-zA-Z]+\d+\/(?:\d+\/)*\d+'
-intPattPo = r'\b(?:[a-zA-Z]+\d+\/(?:\d+\/)*\d+|Po\d+)\b'
-intPatt2 = r'[Te]+\d+\/(?:1+\/)+\d+'
+intPatt = r'[a-zA-Z]+\d+\/(?:\d+\/)*\d+' # All interfaces
+intPattPo = r'\b(?:[a-zA-Z]+\d+\/(?:\d+\/)*\d+|Po\d+)\b' # Interface and Po (Tw1/1/1 Po1)
+intPatt2 = r'[Te]+\d+\/(?:1+\/)+\d+' #Te1/1/1
 
 def dhcpSnooopTr(validIPs, username, netDevice):
     # This function is to take a show run
@@ -60,6 +60,7 @@ def dhcpSnooopTr(validIPs, username, netDevice):
     for validDeviceIP in validIPs:
         descripIntList = []
         TrunkIntList = []
+        shIntCoreOut1 = []
         snoopIntConfigOut = ""
         snoopIntConfigOut1 = ""
 
